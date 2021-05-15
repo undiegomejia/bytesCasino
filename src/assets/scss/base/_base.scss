@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // Define REM
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+
+  background-color: $color-bg;
+  background-image: url('../../../dist/assets/images/main_background.png');
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+}

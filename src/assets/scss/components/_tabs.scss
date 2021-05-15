@@ -1,0 +1,173 @@
+.modal {
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 0;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  opacity: 0;
+  width: auto;
+  backface-visibility: hidden;
+  transform: translateX(5rem);
+  overflow: hidden;
+}
+.active {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  transform: translateX(0);
+  height: auto;
+}
+
+.game {
+  padding: 0.5em;
+  opacity: 1;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) opacity 0.5s;
+  position: relative;
+  cursor: pointer;
+  min-width: 300px;
+  &:hover {
+    opacity: 0.66;
+  }
+  & img {
+    margin: 1rem;
+  }
+  &.upcoming {
+    opacity: 0.5;
+    cursor: default;
+    &:before {
+      content: url('../../assets/images/upcoming.svg');
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      z-index: 6;
+      width: 90px;
+    }
+  }
+  &.new:before {
+    content: url('../../assets/images/new.svg');
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 6;
+    width: 90px;
+  }
+}
+.games-content {
+  width: 920px;
+  margin: 0 auto;
+}
+
+.options_game {
+  opacity: 0.9;
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) opacity 1.9s;
+  position: relative;
+  text-align: center;
+  transition: all .5s ease-in-out;
+  &:hover{
+    text-shadow: 0 0 1.5rem #ffee00dc;
+  }
+  &:hover .game-options_icons .icon.normal{
+    opacity: 0;
+  }
+  &:hover .game-options_icons .icon.hover{
+    opacity: 1;
+  }
+  &:active {
+    color: $color-primary-opacity;
+  }
+  &--active {
+    text-shadow: 0 0 1.5rem #ffee00dc;
+    opacity: 1;
+    & .game-options_icons .icon.normal{
+      opacity: 0;
+    }
+    & .game-options_icons .icon.hover{
+      opacity: 0;
+    }
+    & .game-options_icons .icon.clicked{
+      opacity: 1;
+    }
+  }
+  @include respond(tab-port) {
+    width: 40%;
+    padding: 0;
+  }
+  img {
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    width: 80%;
+    backface-visibility: hidden;
+    min-width: 120px;
+    @include respond(tab-port) {
+      width: 50%;
+    }
+  }
+}
+
+.game-options {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  padding: 1rem 0 12rem 0;
+  flex-wrap: wrap;
+  transition: all 0.2s ease-in-out;
+
+  @include respond(tab-port) {
+    padding: 0 0 0 0 !important;
+  }
+
+  &__open {
+    padding: 0;
+
+    & > .options_game > img {
+      width: 50%;
+
+      @include respond(tab-port) {
+        opacity: 1;
+        top: 0;
+        width: 30%;
+        right: 0;
+        margin-bottom: -2rem;
+      }
+    }
+  }
+  &_icons{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 0 auto;
+    & .icon{
+      width: 100% ;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity .5s ease-in-out;
+      &.normal{
+        opacity: 1;
+      }
+      &.hover{
+        opacity: 0;
+      }
+      &.clicked{
+        opacity: 0;
+      }
+      & svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        & circle, & path {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

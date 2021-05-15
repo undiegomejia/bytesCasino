@@ -1,0 +1,50 @@
+.closeBtn {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 3rem 0;
+  background-color: $color-bg;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 0.5rem 1rem rgba($color-bg, 0.5);
+
+  & svg {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    & path {
+      fill: $color-primary-darker;
+      transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+
+  &:hover {
+    background-color: $color-primary-darker;
+    transform: scale(1.1);
+
+    & > svg {
+      transform: rotate(90deg);
+      & path {
+        fill: $color-bg;
+      }
+    }
+  }
+  &--reverse {
+    background-color: $color-primary;
+    & svg path {
+      fill: $color-bg;
+    }
+    &:hover {
+      background-color: $color-bg;
+      & svg path {
+        fill: $color-primary;
+      }
+    }
+  }
+}

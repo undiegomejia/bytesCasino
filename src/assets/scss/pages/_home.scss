@@ -1,0 +1,51 @@
+.main {
+  transition: all 0.5s;
+  transform: translateY(0);
+  min-height: 74vh;
+  &--active {
+    transform: translateY(-10rem);
+  }
+}
+
+.section-tabs {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  @include respond(tab-port) {
+    padding: 0 2rem;
+    margin-top: -2rem;
+  }
+}
+
+.section-game {
+  display: flex;
+}
+
+.footer {
+  padding: 1em;
+  text-align: center;
+  transition: all 0.5s;
+  align-items: center;
+  justify-content: center;
+  &_credits {
+    text-align: left;
+  }
+  &_logos {
+    text-align: right;
+  }
+  @include respond(tab-port) {
+    margin-top: 12rem;
+    text-align: center;
+    &_credits {
+      text-align: center;
+    }
+    &_logos {
+      text-align: center;
+    }
+  }
+
+  img {
+    width: 17%;
+    margin: 0 0 0 3rem;
+  }
+}

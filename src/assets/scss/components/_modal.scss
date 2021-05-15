@@ -1,0 +1,39 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  @include clearfix;
+}
+
+.window {
+  width: 80%;
+  margin: 3rem 0;
+  padding: 3rem;
+  background-color: rgba($color-white, 0.9);
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 90vh;
+  border-radius: 4px;
+  box-shadow: 0 1.5rem 1rem rgba($color-black, 0.8);
+  & .closeBtn {
+    margin: 1rem 0;
+    top: -2rem;
+    right: -1rem;
+  }
+  &--closed {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &--open {
+    visibility: visible;
+    opacity: 1;
+  }
+  iframe {
+    border: none;
+    box-shadow: 0 0.3rem 2.5rem rgba($color-black, 0.4);
+  }
+}

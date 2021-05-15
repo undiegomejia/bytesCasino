@@ -1,0 +1,36 @@
+header {
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  nav ul {
+    list-style: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 184px;
+    @include respond(tab-port) {
+      max-width: 124px;
+    }
+  }
+
+  .menu-drop {
+    font-size: 17px;
+    padding: 1rem;
+    position: absolute;
+    right: 0em;
+    bottom: -5em;
+    width: 100%;
+    min-width: 104px;
+    text-align: right;
+    background: #3a281b;
+    opacity: 0;
+    li {
+      list-style: none;
+    }
+  }
+}
