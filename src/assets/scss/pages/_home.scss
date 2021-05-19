@@ -5,6 +5,9 @@
   &--active {
     transform: translateY(-10rem);
   }
+  @include respond(tab-port){
+    min-height: 66vh;
+  }
 }
 
 .section-tabs {
@@ -29,15 +32,33 @@
   justify-content: center;
   &_credits {
     text-align: left;
+    & .copyright{
+      text-transform: uppercase;
+      font: 11px;
+    }
   }
   &_logos {
     text-align: right;
+    &--loyalty{
+      width: 100px;
+      position: relative;
+      bottom: 3px;
+    }
+    &--bytes{
+      width: 70px;
+    }
   }
   @include respond(tab-port) {
-    margin-top: 12rem;
+    margin-top: 3rem;
     text-align: center;
+    &-flex{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+    }
     &_credits {
       text-align: center;
+      margin-bottom: 0.5rem!important;
     }
     &_logos {
       text-align: center;
@@ -45,7 +66,9 @@
   }
 
   img {
-    width: 17%;
     margin: 0 0 0 3rem;
+    @include respond(tab-port){
+      margin: 0 0.3rem 0 0.3rem; 
+    }
   }
 }

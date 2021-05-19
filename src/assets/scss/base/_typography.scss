@@ -25,6 +25,7 @@ a {
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
   margin-top: 0;
   @include respond(tab-port) {
+    font-size: 4rem;
     margin-top: 1rem;
   }
   @include respond(tab-land) {
